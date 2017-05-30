@@ -1,5 +1,7 @@
 package com.example.rodrigo.neyntegrator;
 
+import android.util.Log;
+
 import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;
 
@@ -11,22 +13,22 @@ public class Integrador {
 
     String funcao;
 
-    String detalhes;
+    String detalhes = "";
 
     float a;
     float b;
 
-    double[] t = { 0.90617985,
-            -0.90617985,
-            0.53846931,
-            -0.53846931,
+    double[] t = { 0.906180,
+            -0.906180,
+            0.538469,
+            -0.538469,
             0};
 
-    double A[] = {0.23692688,
-            0.23692688,
-            0.47862868,
-            0.47862868,
-            0.56888889};
+    double A[] = {0.236927 ,
+            0.236927,
+            0.478629,
+            0.478629,
+            0.568889 };
 
     public String getFuncao() {
         return funcao;
@@ -70,21 +72,20 @@ public class Integrador {
     private String getF() {
         String bkpFuncao = String.valueOf(funcao);
         detalhes+=("F(x): " + "((" + b + "-" + a + ")/2) *" + bkpFuncao.replaceAll("x", "(" + getXComIntervalos() + ")"))+"\r\n"+" \r\n";
-        return "((" + b + "-" + a + ")/2) *" + bkpFuncao.replaceAll("x", "(" + getXComIntervalos() + ")");
+        return bkpFuncao.replaceAll("x", "(" + getXComIntervalos() + ")");
     }
 
 
     //Substitue x em uma funcao
     private String substitueXnaFuncao(String funcao, double x) {
         funcao.replaceAll("x", String.valueOf(x));
-        //detalhes+=("Replaced function: " + funcao);
         return funcao;
     }
 
     //Define a função  Ai * F(ti) a ser calculada em um ciclo
     private String defineFuncaoDoClico(String F, int n) {
         String funcaoSubstituida = F.replaceAll("x", String.valueOf(t[n]));
-        //detalhes+=("Function of cicle " + n + " is: " + String.valueOf(A[n]) + " * (" + funcaoSubstituida + ")")+"\r\n";
+        Log.d("TEST_INTEGRATE","Function of cicle " + n + " is: " + String.valueOf(A[n]) + " * (" + funcaoSubstituida + ")");
         detalhes+= ("Cicle "+n)+"\r\n";
         return String.valueOf(A[n]) + " * (" + funcaoSubstituida + ")";
     }
@@ -117,6 +118,9 @@ public class Integrador {
         for (int n = 0; n < 5; n++) {
             resultado += calculaValorDeFuncao(defineFuncaoDoClico(F, n));
         }
+
+        resultado = ((b-a)/2) * resultado;
+
         detalhes+=("The integration result is: " + resultado)+"\r\n";
         return resultado;
     }
