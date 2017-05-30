@@ -18,13 +18,13 @@ public class Integrador {
     float a;
     float b;
 
-    double[] t = { 0.906180,
+    private double[] t = { 0.906180,
             -0.906180,
             0.538469,
             -0.538469,
             0};
 
-    double A[] = {0.236927 ,
+    private double A[] = {0.236927 ,
             0.236927,
             0.478629,
             0.478629,

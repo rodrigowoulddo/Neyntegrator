@@ -70,7 +70,8 @@
                 android:hint="Type your function (Ex. x^2)"
                 android:inputType="textPersonName"
                 android:textAlignment="center"
-                android:textColor="@color/textColor" />
+                android:textColor="@color/textColor"
+                android:textSize="20sp" />
 
             <Space
                 android:layout_width="match_parent"
