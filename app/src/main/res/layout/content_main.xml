@@ -16,24 +16,17 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/neymar"
             android:backgroundTint="@android:color/darker_gray"
             android:orientation="vertical">
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="25dp" />
+                android:layout_height="20dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="88dp"
-                    android:layout_height="92dp"
-                    android:src="@drawable/neymar2" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -46,9 +39,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:fontFamily="casual"
+                        android:fontFamily="sans-serif-smallcaps"
                         android:text="Neyntegrator"
-                        android:textAlignment="viewStart"
+                        android:textAlignment="center"
                         android:textSize="32sp"
                         tools:layout_editor_absoluteX="150dp"
                         tools:layout_editor_absoluteY="62dp" />
@@ -67,11 +60,11 @@
                 android:layout_marginLeft="35dp"
                 android:layout_marginRight="35dp"
                 android:ems="10"
-                android:hint="Type your function (Ex. x^2)"
+                android:hint="f(x)"
                 android:inputType="textPersonName"
                 android:textAlignment="center"
                 android:textColor="@color/textColor"
-                android:textSize="20sp" />
+                android:textSize="30sp" />
 
             <Space
                 android:layout_width="match_parent"
@@ -107,7 +100,8 @@
                     android:inputType="numberSigned|numberDecimal"
                     android:padding="5dp"
                     android:textAlignment="center"
-                    android:textColor="@color/textColor" />
+                    android:textColor="@color/textColor"
+                    android:textSize="25sp" />
 
                 <EditText
                     android:id="@+id/txtB"
@@ -119,7 +113,8 @@
                     android:inputType="numberSigned|numberDecimal"
                     android:padding="5dp"
                     android:textAlignment="center"
-                    android:textColor="@color/textColor" />
+                    android:textColor="@color/textColor"
+                    android:textSize="25sp" />
             </LinearLayout>
 
             <Space
