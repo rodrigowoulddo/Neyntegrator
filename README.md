@@ -1,6 +1,6 @@
 # Neyntegrator
 
-* Plataforma: Android
+* Plataform: Android
 * API: 24
 * Data Persistance: None
 * Aplication Language: English (UK)
